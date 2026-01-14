@@ -1,3 +1,5 @@
+package example
+
 interface Movable{
     var speed: Int
     val model: String
@@ -22,7 +24,7 @@ class Car (override val number: String, override val model: String): Movable{
     fun travel(obj: Movable) = obj.move()
     fun main(){
         val car:Movable = Car("LADA", "134Lad")
-        //var car = Car()
+        //var car = example.Car()
         val aircraft:Movable = Aircraft("Boeing", "777")
         aircraft.move()
         aircraft.stop()

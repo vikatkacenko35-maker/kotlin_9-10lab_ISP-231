@@ -1,3 +1,5 @@
+import resources.OutpostResource
+import resources.ResourceManager
 import kotlin.math.min
 
 fun main(){

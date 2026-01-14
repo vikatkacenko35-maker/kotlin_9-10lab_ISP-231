@@ -1,3 +1,7 @@
+package example
+
+import characters.OutpostWorker
+
 //var age: Int = 18
 //    set(value) {
 //        if ((value > 0) and (value < 110) )
@@ -55,5 +59,5 @@ fun main(){
     println("Id предмета: $id\nИмя: $name\nколичество: $quantity\n")
     val vicka: Person = Person("Vicka")
     vicka.hello()
-    //val pavel:Human = Human("Pavel")
+    //val pavel:example.Human = example.Human("Pavel")
 }

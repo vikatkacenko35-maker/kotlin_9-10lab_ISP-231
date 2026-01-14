@@ -1,3 +1,5 @@
+package modules
+
 class ResearchLab: OutpostModule("Исследовательская работа") {
     override fun performAction(manager: ResourceManager){
         val minerals = manager.get("Minerals")

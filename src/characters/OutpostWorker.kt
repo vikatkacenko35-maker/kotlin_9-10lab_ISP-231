@@ -1,3 +1,4 @@
+package characters
 
 class OutpostWorker(val name: String) {
     var maxEnergy: Int = 100

@@ -1,3 +1,5 @@
+package characters
+
 class Hero(var Name: String) {
     var health: Int = 100
         set(value){
