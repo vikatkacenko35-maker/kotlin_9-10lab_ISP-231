@@ -9,5 +9,14 @@ fun main(){
     println(age)
     age = -345
     println(age)
-
+    val worker = OutpostWorker("Alesha")
+    println("Энергия: ${worker.energy}")
+    println("Настроение: ${worker.mood}")
+    worker.work()
+    worker.work()
+    worker.work()
+    println("Энергия: ${worker.energy}")
+    println("Настроение: ${worker.mood}")
+    worker.rest()
+    worker.levelUp()
 }
