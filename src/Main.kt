@@ -2,6 +2,7 @@ import example.InstantMessenger
 import example.PhotoCamers
 import example.PhotoDevice
 import example.SmartPhone
+import example.UserProfile
 import example.counter
 import modules.EnergyGenerator
 import modules.ModuleResult
@@ -54,4 +55,22 @@ fun main(){
     //yotaPhone.takePhoto()
     counter = 1
     counter = 5
+
+    println("Создаем профиль пользователя")
+    val user = UserProfile("Вика", "vika@gmail.com")
+
+    println("\n Name: ${user.name}")
+    println("Email: ${user.email}")
+
+    println("\n Обращаемся к аватару впервые:")
+    println("Файл аватараЖ :${user.avatar}")
+
+    println("\n Обращаемся к аватару снова:")
+    println("Файл аватара :${user.avatar}")
+
+    println("Меняем email: ")
+    user.email = "hfjg@gmaol.com"
+
+    println("\n Меняем имя:")
+    user.name = "Вика Т."
 }
