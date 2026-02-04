@@ -1,3 +1,4 @@
+import example.GameHero
 import example.InstantMessenger
 import example.PhotoCamers
 import example.PhotoDevice
@@ -59,18 +60,31 @@ fun main(){
     println("Создаем профиль пользователя")
     val user = UserProfile("Вика", "vika@gmail.com")
 
-    println("\n Name: ${user.name}")
-    println("Email: ${user.email}")
+//    println("\n Name: ${user.name}")
+//    println("Email: ${user.email}")
+//
+//    println("\n Обращаемся к аватару впервые:")
+//    println("Файл аватараЖ :${user.avatar}")
+//
+//    println("\n Обращаемся к аватару снова:")
+//    println("Файл аватара :${user.avatar}")
+//
+//    println("Меняем email: ")
+//    user.email = "hfjg@gmaol.com"
+//
+//    println("\n Меняем имя:")
+//    user.name = "Вика Т."
 
-    println("\n Обращаемся к аватару впервые:")
-    println("Файл аватараЖ :${user.avatar}")
+    println("Создаем героя...")
+    val hero = GameHero("Воин Света")
+    println("Текушая мана: ${hero.mana}")
 
-    println("\n Обращаемся к аватару снова:")
-    println("Файл аватара :${user.avatar}")
-
-    println("Меняем email: ")
-    user.email = "hfjg@gmaol.com"
-
+    println("Героц использует способность")
+    println("Способность:${hero.ultimate}")
     println("\n Меняем имя:")
-    user.name = "Вика Т."
+    hero.name = "Крутой армянин"
+
+    println("Герой восстанавливает ману")
+    hero.mana = 200
+
 }
