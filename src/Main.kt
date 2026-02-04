@@ -22,9 +22,20 @@ fun handleModuleResult(result: ModuleResult){
     }
 }
 
+object SystemLogger{
+    init {
+        println("SystemLogger инициализирован")
+    }
 
+    fun log(message: String){
+        println("[LOG] $message")
+    }
+}
+val logger by lazy { SystemLogger }
 
 fun main(){
+
+    logger.log("Запуск базы")
 
     val manager = ResourceManager()
     manager.add(OutpostResource(1, "Minerals", 120))
@@ -38,15 +49,23 @@ fun main(){
     generator.performAction(manager)
     lab.performAction(manager)
 
+    val loadedresourses = FileStorage.load()
+    loadedresourses.forEach { manager.add(it) }
+
+    if(loadedresourses.isEmpty()){
+        manager.add(OutpostResource(1, "Minerals", 300))
+        manager.add(OutpostResource(2,"Gas", 100))
+    }
     val minerals = OutpostResource(1, "Minerals", 300)
     val gas = OutpostResource(2, "Gas", 100)
     manager.add(minerals)
     manager.add(gas)
     manager.printAll()
-    val bonus = minerals.copy(amount = minerals.amount + 50)
+    val bonus = minerals.copy(amountInit = minerals.amount + 50)
     println("Копия минералов с бонусом: $bonus")
     println()
     manager.printAll()
+    FileStorage.save(manager.getAll())
 
     val max = InstantMessenger("MAX")
     //val photoCamera = PhotoCamers()
