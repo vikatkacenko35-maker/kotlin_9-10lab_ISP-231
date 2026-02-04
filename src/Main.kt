@@ -1,3 +1,8 @@
+import example.InstantMessenger
+import example.PhotoCamers
+import example.PhotoDevice
+import example.SmartPhone
+import example.counter
 import modules.EnergyGenerator
 import modules.ModuleResult
 import modules.ResearchLab
@@ -40,4 +45,13 @@ fun main(){
     println("Копия минералов с бонусом: $bonus")
     println()
     manager.printAll()
+
+    val max = InstantMessenger("MAX")
+    //val photoCamera = PhotoCamers()
+    val yotaPhone = SmartPhone("yotaPhone", max)
+    yotaPhone.sendTextMessage()
+    yotaPhone.sendVideoMessage()
+    //yotaPhone.takePhoto()
+    counter = 1
+    counter = 5
 }
